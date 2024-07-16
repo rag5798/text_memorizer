@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Racer with Missing Words</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .paragraph {
+            margin-bottom: 20px;
+        }
+        .missing-word {
+            display: inline-block;
+            border: 1px solid #ccc;
+            width: 100px;
+            text-align: center;
+        }
+        .user-input {
+            display: block;
+            width: 100%;
+            text-align: left;
+            margin: 10px 0;
+            height: 100px;
+            font-size: 16px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="content">
+    <div class="paragraph" data-text="We, the First Presidency and the Council of the Twelve Apostles of The Church of Jesus Christ of Latter-day Saints, solemnly proclaim that marriage between a man and a woman is ordained of God and that the family is central to the Creator’s plan for the eternal destiny of His children.">
+        We, the First Presidency and the Council of the Twelve Apostles of The Church of Jesus Christ of Latter-day Saints, solemnly proclaim that marriage between a man and a woman is ordained of God and that the family is central to the Creator’s plan for the eternal destiny of His children.
+    </div>
+    <!-- Add more paragraphs here -->
+</div>
+
+<div id="userInputContainer">
+    <!-- User input fields will be added here -->
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const paragraphs = document.querySelectorAll('.paragraph');
+        const userInputContainer = document.getElementById('userInputContainer');
+
+        paragraphs.forEach(paragraph => {
+            const text = paragraph.getAttribute('data-text');
+            const words = text.split(' ');
+            const originalTextWithBlanks = [];
+            let userInputFields = '';
+
+            words.forEach(word => {
+                if (Math.random() < 0.2) { // 20% chance to make a word missing
+                    originalTextWithBlanks.push(`<span class="missing-word">${'_'.repeat(word.length)}</span>`);
+                } else {
+                    originalTextWithBlanks.push(word);
+                }
+            });
+
+            paragraph.innerHTML = originalTextWithBlanks.join(' ');
+            userInputFields = `<textarea class="user-input" data-original-text="${text}"></textarea>`;
+            userInputContainer.innerHTML += `<div>${userInputFields}</div>`;
+        });
+
+        document.querySelectorAll('.user-input').forEach(textarea => {
+            textarea.addEventListener('input', function() {
+                const originalText = textarea.dataset.originalText.split(' ');
+                const userInput = textarea.value.split(' ');
+                let formattedText = '';
+
+                for (let i = 0; i < originalText.length; i++) {
+                    const word = userInput[i] || '';
+                    if (word === originalText[i]) {
+                        formattedText += `<span class="correct">${word} </span>`;
+                    } else {
+                        formattedText += `<span class="incorrect">${word} </span>`;
+                    }
+                }
+
+                const parentDiv = textarea.parentElement;
+                const feedbackDiv = parentDiv.querySelector('.feedback');
+
+                if (!feedbackDiv) {
+                    const newFeedbackDiv = document.createElement('div');
+                    newFeedbackDiv.classList.add('feedback');
+                    parentDiv.appendChild(newFeedbackDiv);
+                }
+                
+                parentDiv.querySelector('.feedback').innerHTML = formattedText;
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
