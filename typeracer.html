@@ -7,10 +7,15 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+        }
+        #content{
+            margin: 10px;
         }
         .paragraph {
             margin-bottom: 20px;
+            display: none; /* Hide all paragraphs initially */
         }
         .missing-word {
             display: inline-block;
@@ -22,7 +27,7 @@
             display: block;
             width: 100%;
             text-align: left;
-            margin: 10px 0;
+            margin: 10px 10px;
             height: 100px;
             font-size: 16px;
             padding: 10px;
@@ -34,15 +39,74 @@
         .incorrect {
             color: red;
         }
+        .typed-word {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+        .header {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+            margin: 0;
+            width: 100%; /* Ensure full width */
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            display: inline-block;
+            margin-right: 20px; /* Adjust spacing between links */
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 24px;
+            display: inline-block; /* Display links inline */
+            margin-right: 20px; /* Adjust spacing between links */
+        }
     </style>
 </head>
 <body>
-
+<header class="header">
+    <h1><a href="index.html">Memorizer</a></h1>
+    <h1><a href="typeracer.html">TypeRacer</a></h1>
+</header>
 <div id="content">
     <div class="paragraph" data-text="We, the First Presidency and the Council of the Twelve Apostles of The Church of Jesus Christ of Latter-day Saints, solemnly proclaim that marriage between a man and a woman is ordained of God and that the family is central to the Creator’s plan for the eternal destiny of His children.">
         We, the First Presidency and the Council of the Twelve Apostles of The Church of Jesus Christ of Latter-day Saints, solemnly proclaim that marriage between a man and a woman is ordained of God and that the family is central to the Creator’s plan for the eternal destiny of His children.
     </div>
     <!-- Add more paragraphs here -->
+    <div class="paragraph" data-text="All human beings—male and female—are created in the image of God. Each is a beloved spirit son or daughter of heavenly parents, and, as such, each has a divine nature and destiny. Gender is an essential characteristic of individual premortal, mortal, and eternal identity and purpose.">
+        All human beings—male and female—are created in the image of God. Each is a beloved spirit son or daughter of heavenly parents, and, as such, each has a divine nature and destiny. Gender is an essential characteristic of individual premortal, mortal, and eternal identity and purpose.
+    </div>
+
+    <div class="paragraph" data-text="In the premortal realm, spirit sons and daughters knew and worshipped God as their Eternal Father and accepted His plan by which His children could obtain a physical body and gain earthly experience to progress toward perfection and ultimately realize their divine destiny as heirs of eternal life. The divine plan of happiness enables family relationships to be perpetuated beyond the grave. Sacred ordinances and covenants available in holy temples make it possible for individuals to return to the presence of God and for families to be united eternally.">
+        In the premortal realm, spirit sons and daughters knew and worshipped God as their Eternal Father and accepted His plan by which His children could obtain a physical body and gain earthly experience to progress toward perfection and ultimately realize their divine destiny as heirs of eternal life. The divine plan of happiness enables family relationships to be perpetuated beyond the grave. Sacred ordinances and covenants available in holy temples make it possible for individuals to return to the presence of God and for families to be united eternally.
+    </div>
+
+    <div class="paragraph" data-text="The first commandment that God gave to Adam and Eve pertained to their potential for parenthood as husband and wife. We declare that God’s commandment for His children to multiply and replenish the earth remains in force. We further declare that God has commanded that the sacred powers of procreation are to be employed only between man and woman, lawfully wedded as husband and wife.">
+        The first commandment that God gave to Adam and Eve pertained to their potential for parenthood as husband and wife. We declare that God’s commandment for His children to multiply and replenish the earth remains in force. We further declare that God has commanded that the sacred powers of procreation are to be employed only between man and woman, lawfully wedded as husband and wife.
+    </div>
+
+    <div class="paragraph" data-text="We declare the means by which mortal life is created to be divinely appointed. We affirm the sanctity of life and of its importance in God’s eternal plan.">
+        We declare the means by which mortal life is created to be divinely appointed. We affirm the sanctity of life and of its importance in God’s eternal plan.
+    </div>
+
+    <div class="paragraph" data-text="Husband and wife have a solemn responsibility to love and care for each other and for their children. “Children are an heritage of the Lord” (Psalm 127:3). Parents have a sacred duty to rear their children in love and righteousness, to provide for their physical and spiritual needs, and to teach them to love and serve one another, observe the commandments of God, and be law-abiding citizens wherever they live. Husbands and wives—mothers and fathers—will be held accountable before God for the discharge of these obligations.">
+        Husband and wife have a solemn responsibility to love and care for each other and for their children. “Children are an heritage of the Lord” (Psalm 127:3). Parents have a sacred duty to rear their children in love and righteousness, to provide for their physical and spiritual needs, and to teach them to love and serve one another, observe the commandments of God, and be law-abiding citizens wherever they live. Husbands and wives—mothers and fathers—will be held accountable before God for the discharge of these obligations.
+    </div>
+
+    <div class="paragraph" data-text="The family is ordained of God. Marriage between man and woman is essential to His eternal plan. Children are entitled to birth within the bonds of matrimony, and to be reared by a father and a mother who honor marital vows with complete fidelity. Happiness in family life is most likely to be achieved when founded upon the teachings of the Lord Jesus Christ. Successful marriages and families are established and maintained on principles of faith, prayer, repentance, forgiveness, respect, love, compassion, work, and wholesome recreational activities. By divine design, fathers are to preside over their families in love and righteousness and are responsible to provide the necessities of life and protection for their families. Mothers are primarily responsible for the nurture of their children. In these sacred responsibilities, fathers and mothers are obligated to help one another as equal partners. Disability, death, or other circumstances may necessitate individual adaptation. Extended families should lend support when needed.">
+        The family is ordained of God. Marriage between man and woman is essential to His eternal plan. Children are entitled to birth within the bonds of matrimony, and to be reared by a father and a mother who honor marital vows with complete fidelity. Happiness in family life is most likely to be achieved when founded upon the teachings of the Lord Jesus Christ. Successful marriages and families are established and maintained on principles of faith, prayer, repentance, forgiveness, respect, love, compassion, work, and wholesome recreational activities. By divine design, fathers are to preside over their families in love and righteousness and are responsible to provide the necessities of life and protection for their families. Mothers are primarily responsible for the nurture of their children. In these sacred responsibilities, fathers and mothers are obligated to help one another as equal partners. Disability, death, or other circumstances may necessitate individual adaptation. Extended families should lend support when needed.
+    </div>
+
+    <div class="paragraph" data-text="We warn that individuals who violate covenants of chastity, who abuse spouse or offspring, or who fail to fulfill family responsibilities will one day stand accountable before God. Further, we warn that the disintegration of the family will bring upon individuals, communities, and nations the calamities foretold by ancient and modern prophets.">
+        We warn that individuals who violate covenants of chastity, who abuse spouse or offspring, or who fail to fulfill family responsibilities will one day stand accountable before God. Further, we warn that the disintegration of the family will bring upon individuals, communities, and nations the calamities foretold by ancient and modern prophets.
+    </div>
+
+    <div class="paragraph" data-text="We call upon responsible citizens and officers of government everywhere to promote those measures designed to maintain and strengthen the family as the fundamental unit of society.">
+        We call upon responsible citizens and officers of government everywhere to promote those measures designed to maintain and strengthen the family as the fundamental unit of society.
+    </div>
 </div>
 
 <div id="userInputContainer">
@@ -53,12 +117,13 @@
     document.addEventListener('DOMContentLoaded', function() {
         const paragraphs = document.querySelectorAll('.paragraph');
         const userInputContainer = document.getElementById('userInputContainer');
+        let currentParagraphIndex = 0;
 
-        paragraphs.forEach(paragraph => {
+        function displayNextParagraph() {
+            const paragraph = paragraphs[currentParagraphIndex];
             const text = paragraph.getAttribute('data-text');
             const words = text.split(' ');
             const originalTextWithBlanks = [];
-            let userInputFields = '';
 
             words.forEach(word => {
                 if (Math.random() < 0.2) { // 20% chance to make a word missing
@@ -69,37 +134,53 @@
             });
 
             paragraph.innerHTML = originalTextWithBlanks.join(' ');
-            userInputFields = `<textarea class="user-input" data-original-text="${text}"></textarea>`;
-            userInputContainer.innerHTML += `<div>${userInputFields}</div>`;
-        });
+            paragraph.style.display = 'block';
 
-        document.querySelectorAll('.user-input').forEach(textarea => {
+            userInputContainer.innerHTML = ''; // Clear previous input field
+
+            const userInputFields = `<textarea class="user-input" data-original-text="${text}"></textarea>`;
+            userInputContainer.innerHTML = userInputFields;
+
+            const textarea = userInputContainer.querySelector('.user-input');
+            textarea.focus();
+            const wordsContainer = document.createElement('div');
+            wordsContainer.classList.add('words-container');
+            paragraph.appendChild(wordsContainer);
+
             textarea.addEventListener('input', function() {
                 const originalText = textarea.dataset.originalText.split(' ');
                 const userInput = textarea.value.split(' ');
                 let formattedText = '';
+                let allCorrect = true;
 
                 for (let i = 0; i < originalText.length; i++) {
                     const word = userInput[i] || '';
                     if (word === originalText[i]) {
-                        formattedText += `<span class="correct">${word} </span>`;
+                        formattedText += `<span class="typed-word correct">${word}</span> `;
                     } else {
-                        formattedText += `<span class="incorrect">${word} </span>`;
+                        formattedText += `<span class="typed-word incorrect">${word}</span> `;
+                        allCorrect = false;
                     }
                 }
 
-                const parentDiv = textarea.parentElement;
-                const feedbackDiv = parentDiv.querySelector('.feedback');
+                wordsContainer.innerHTML = formattedText.trim(); // Update words display below paragraph
 
-                if (!feedbackDiv) {
-                    const newFeedbackDiv = document.createElement('div');
-                    newFeedbackDiv.classList.add('feedback');
-                    parentDiv.appendChild(newFeedbackDiv);
+                if (allCorrect && userInput.length === originalText.length) {
+                    setTimeout(function() {
+                        const nextParagraphIndex = currentParagraphIndex + 1;
+                        if (nextParagraphIndex < paragraphs.length) {
+                            currentParagraphIndex = nextParagraphIndex;
+                            displayNextParagraph();
+                        } else {
+                            alert("You've completed all the paragraphs!");
+                            window.location.href = 'index.html'; // Redirect to index.html after alert
+                        }
+                    }, 1000); // Delay before moving to next paragraph
                 }
-                
-                parentDiv.querySelector('.feedback').innerHTML = formattedText;
             });
-        });
+        }
+
+        displayNextParagraph();
     });
 </script>
 
